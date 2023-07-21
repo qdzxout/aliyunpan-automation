@@ -1,14 +1,16 @@
-name: My awesome readme
+name:  cronjob trigger
 on:
-  workflow_dispatch:
   schedule:
-    # Runs at 12 am UTC
     - cron: "0 0 * * *"
 
 jobs:
-  update-readme:
-    name: Update this repo's README
+  cronjob-based-github-action:
+    name: Cronjob based github action
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: qdzxout/aliyunpan-automation@main
+      # 添加您的步骤
+      # - step1
+      # - step 2
+      # - step n, use it as the last step
+      - uses: gautamkrishnar/keepalive-workflow@v1 # 使用具有默认设置的工作流程文件
