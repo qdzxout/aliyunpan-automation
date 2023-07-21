@@ -1,0 +1,17 @@
+name: Github Action with a cronjob trigger
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:   # 允许手动触发工作流程
+
+jobs:
+  cronjob-based-github-action:
+    name: Cronjob based github action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # 添加您的步骤
+      # - step1
+      # - step 2
+      # - step n, use it as the last step
+      - uses: gautamkrishnar/keepalive-workflow@v1 # 使用具有默认设置的工作流程文件
